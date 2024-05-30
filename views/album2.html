@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= album %></title>
+</head>
+<body>
+
+
+
+        <% for(let i = 0; i < musicas.length; i++){ %>
+
+        <li> <a href="/musica/<%= musicas[i]._id %> "><%= musicas[i].nome %> </a></li>
+       
+        <% } %>
+
+        
+
+
+        <div class="container-player">
+    
+            <h2 id="nomeMusica"></h2>
+               <h4 id="nomeAutor"></h4>
+                <audio controls ></audio>
+
+        
+        </div>
+
+
+        <script>
+
+            
+        </script>
+        
+
+</body>
+</html>

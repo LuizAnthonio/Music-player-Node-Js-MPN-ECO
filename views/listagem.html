@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+    <%- include("./parts/header.html") %>
+
+    <title>Listagem Home</title>
+    
+<body>
+    
+    
+    <h1 class="title">Musicas</h1>
+    <div class="container">
+        
+        <div class="fcolum">
+            
+            
+                
+           
+                
+                <div class="container-playlist">
+    
+                    <input type="hidden" name="qtd" id="qtd" value="2">
+                    
+                    <div class="playlist-single">
+                        
+                        
+                        <% for(let i = 0; i < musicas.length; i++){ %>
+                            
+                            <div class="musica-container">
+                                <div class="music">
+                                    <img src="<%= musicas[i].capa %>" alt="" class="capa">
+                                    <div class="infos">
+                                        <h4 class="title-m"><%= musicas[i].nome %></h4>
+                                        <p class="title-music"><%= musicas[i].autor %></p>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <input type="hidden" name="musicas" class="musicasInfo" value="<%= musicas[i].dir %>">
+                            </div>
+                            
+                            <% } %>
+                            
+                            <div class="footer"></div>
+                        </div><!--playlist-single-->
+                
+                    </div><!--container-playlist-->
+                    
+                </div>
+                
+    
+                
+
+                <%- include("./parts/player.html") %>
+            </div>
+            
+            
+
+
+
+
+        <script>
+            function formatarTempo(segundos) {
+                const minutos = Math.floor(segundos / 60);
+                const segundosRestantes = Math.floor(segundos % 60);
+                const segundosFormatados = segundosRestantes < 10 ? `0${segundosRestantes}` : segundosRestantes;
+                return `${minutos}:${segundosFormatados}`;
+            }
+
+            //let musicInfo = document.querySelectorAll(".musicasInfo");
+            
+            
+
+           
+           </script>
+        
+    </body>
+    </html>
+    
