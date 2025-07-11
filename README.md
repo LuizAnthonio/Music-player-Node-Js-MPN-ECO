@@ -6,11 +6,6 @@
 
 Um player de música simples desenvolvido em Node.js com Express e MongoDB, permitindo upload e reprodução de músicas em um servidor local.
 
-## 📌 Nível do Projeto
-**Nível:** Iniciante/Intermediário  
-**Tipo:** Projeto acadêmico ou para fins de estudo  
-**Complexidade:** Baixa/Média (CRUD, upload de arquivos e streaming de áudio)
-
 ## 🚀 Funcionalidades
 - ✅ Upload de músicas (MP3 ou similar)
 - ✅ Listagem de músicas do banco de dados
