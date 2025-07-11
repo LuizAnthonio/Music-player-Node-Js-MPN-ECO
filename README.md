@@ -65,21 +65,34 @@ Music-player-Node-Js-MPN-ECO/
 
 O sistema oferece os seguintes endpoints:
 
-### **Músicas**
-- `GET /`  
-  Lista todas as músicas cadastradas  
-  **Resposta:**  
-  ```json
-  [
-    {
-      "_id": "5f8d...",
-      "nome": "Nome da Música",
-      "artista": "Artista",
-      "caminho": "/uploads/arquivo.mp3",
-      "dataUpload": "2023-01-01T00:00:00.000Z"
-    }
-  ]
-`
 
+### 📌 Rotas Básicas
+| Método | Rota            | Descrição                     | Parâmetros       |
+|--------|-----------------|-------------------------------|------------------|
+| `GET`  | `/`             | Lista todas as músicas        | -                |
+| `GET`  | `/musica/:id`   | Detalhes de uma música        | `id` (ObjectId)  |
 
-  
+### 🎧 Álbuns
+| Método | Rota          | Descrição               | Parâmetros        |
+|--------|---------------|-------------------------|-------------------|
+| `GET`  | `/album/:ab`  | Músicas de um álbum     | `ab` (nome álbum) |
+
+### 🎶 Playlists
+| Método | Rota                     | Descrição                          | Parâmetros               |
+|--------|--------------------------|------------------------------------|--------------------------|
+| `GET`  | `/playlist/:id`          | Detalhes da playlist               | `id` (ObjectId)          |
+| `GET`  | `/playlist/:id/:index`   | Playlist com música específica     | `id` + `index` (número)  |
+
+### 🔍 Exemplos Práticos
+```bash
+# Listar músicas
+GET /
+
+# Buscar música
+GET /musica/507f1f77bcf86cd799439011
+
+# Ver álbum
+GET /album/Teste
+
+# Acessar playlist (música 3)
+GET /playlist/611f.../2
